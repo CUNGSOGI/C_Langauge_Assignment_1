@@ -6,7 +6,7 @@
 int main() {
 	int number[SIZE];
 	int most, temp;
-	srdand(time(NULL));
+	srand(time(NULL));
 	for (int i = 0; i < SIZE; i++)
 		number[i] = (rand() % 10000) + 1;
 	for (int i = 0; i < SIZE - 1; i++) {

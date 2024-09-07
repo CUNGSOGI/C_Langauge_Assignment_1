@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define SiZE 100
+#define SIZE 100
 
 int main() {
 	int number[SIZE];
@@ -18,13 +18,13 @@ int main() {
 	}
 	for (int i = 0; i < SIZE; i++)
 		total += number[i];
-	avg = (float)tatal / SIZE;
+	avg = (float)total / SIZE;
 	max = number[0];
 	min = number[0];
 	for (int i = 0; i < SIZE; i++) {
-		if(max<)
+		if (max < number[i])max = number[i];
+		if (max > number[i])min = number[i];
 	}
-	printf("%f", avg);
+	printf("avg=%f, max =%d, min = %d\n", avg, max, min);
 	return 0;
 }
-
