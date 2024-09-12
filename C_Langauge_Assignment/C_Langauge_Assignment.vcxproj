@@ -131,6 +131,7 @@
     <ClCompile Include="1주차 실습문제.c" />
     <ClCompile Include="1주차2.배열실습.c" />
     <ClCompile Include="1주차3.배열실습.c" />
+    <ClCompile Include="2주차 실습문제.c" />
     <ClCompile Include="3주차.3포인터 실습 과제.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
