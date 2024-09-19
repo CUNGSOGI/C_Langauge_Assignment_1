@@ -4,7 +4,7 @@
 
 #define N 5
 
-int a[N]={}, b[N]={}, n, ID, i, j, m = 0, M = 100;
+int a[N]={0}, b[N]={0}, n, ID, i, j, m = 0, M = 100;
 double sa = 0, st = 0;
 
 void On() {
