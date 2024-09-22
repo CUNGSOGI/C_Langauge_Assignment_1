@@ -42,5 +42,8 @@
     <ClCompile Include="4주차4.문자열4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="5주차2.문자열6.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
