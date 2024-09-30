@@ -57,7 +57,7 @@
     <ClCompile Include="6주차3.구조체3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="6주차4.구조체.c">
+    <ClCompile Include="6주차4.구조체4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
