@@ -141,6 +141,7 @@
     <ClCompile Include="5주차3.문자열7.c" />
     <ClCompile Include="6주차2.구조체2.c" />
     <ClCompile Include="6주차3.구조체3.c" />
+    <ClCompile Include="6주차4.구조체.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

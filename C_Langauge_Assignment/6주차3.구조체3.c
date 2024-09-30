@@ -14,7 +14,7 @@ typedef struct rect {
 	POINT rt;
 }RECT;
 
-double dist(POINT p1, struct point p2) {
+double dist(POINT p1, struct point p2){
 	return sqrt(pow((p2.x = p1.x), 2) + pow((p2.y - p1.y), 2));
 }
 
