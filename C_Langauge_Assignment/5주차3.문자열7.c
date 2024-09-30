@@ -2,7 +2,7 @@
 
 int main() {
 	char input[200] = "";
-	int count[20] = { 0 };
+	int count[26] = { 0 };
 	int ch;
 	int i = 0;
 	while ((ch = getchar()) != EOF)
@@ -13,7 +13,7 @@ int main() {
 			count[input[i] - 'a']++;
 		i++;
 	}
-	printf("ÀÔ·Â¹®ÀÚ¿­ : %s\n", input);
-	for (i = 0; i < 26; i++) printf("%c ÃâÇöÈ½¼ö : %d\n", 'a' + i, count[i]);
+	printf("ì…ë ¥ë¬¸ìì—´ : %s\n", input);
+	for (i = 0; i < 26; i++) printf("%c ì¶œí˜„íšŸìˆ˜: %d\n", 'a' + i, count[i]);
 	return 0;
 }
