@@ -142,6 +142,9 @@
     <ClCompile Include="6주차2.구조체2.c" />
     <ClCompile Include="6주차3.구조체3.c" />
     <ClCompile Include="6주차4.구조체4.c" />
+    <ClCompile Include="7주차1.구조체5.c" />
+    <ClCompile Include="7주차2.구조체6.c" />
+    <ClCompile Include="7주차3.구조체8.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
