@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\C_Langauge_Assignment\6주차2.구조체2.c">
+    <ClCompile Include="6주차2.구조체2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\C_Langauge_Assignment\6주차3.구조체3.c">
+    <ClCompile Include="6주차3.구조체3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\C_Langauge_Assignment\6주차4.구조체4.c">
+    <ClCompile Include="6주차4.구조체4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

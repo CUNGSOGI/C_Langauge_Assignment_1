@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8675aa65-713b-433c-b2de-a66b4b7f399e}</ProjectGuid>
-    <RootNamespace>CLangaugeAssignment</RootNamespace>
+    <ProjectGuid>{57561ba9-16fb-4f07-9e85-e12c5d805dfc}</ProjectGuid>
+    <RootNamespace>Week1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Week.1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -126,6 +127,12 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="1주자4,배열실습.c" />
+    <ClCompile Include="1주차 실습문제.c" />
+    <ClCompile Include="1주차2.배열실습.c" />
+    <ClCompile Include="1주차3.배열실습.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

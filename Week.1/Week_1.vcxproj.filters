@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\C_Langauge_Assignment\1주자4,배열실습.c">
+    <ClCompile Include="1주자4,배열실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\C_Langauge_Assignment\1주차 실습문제.c">
+    <ClCompile Include="1주차 실습문제.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\C_Langauge_Assignment\1주차2.배열실습.c">
+    <ClCompile Include="1주차2.배열실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\C_Langauge_Assignment\1주차3.배열실습.c">
+    <ClCompile Include="1주차3.배열실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

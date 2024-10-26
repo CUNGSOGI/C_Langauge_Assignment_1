@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\C_Langauge_Assignment\2주차 실습문제.c">
+    <ClCompile Include="2주차 실습문제.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

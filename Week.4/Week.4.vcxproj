@@ -18,6 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="4주차 2.문자열실습1.c" />
+    <ClCompile Include="4주차 실습문제.c" />
+    <ClCompile Include="4주차4.문자열4.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,11 +131,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\C_Langauge_Assignment\4주차 2.문자열실습1.c" />
-    <ClCompile Include="..\C_Langauge_Assignment\4주차 실습문제.c" />
-    <ClCompile Include="..\C_Langauge_Assignment\4주차4.문자열4.c" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
