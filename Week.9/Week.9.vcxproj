@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8675aa65-713b-433c-b2de-a66b4b7f399e}</ProjectGuid>
-    <RootNamespace>CLangaugeAssignment</RootNamespace>
+    <ProjectGuid>{817db117-ee1e-4bda-a2d9-bf9e2d44ccf2}</ProjectGuid>
+    <RootNamespace>Week9</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -126,6 +126,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="9주차3.FILE3.텍스트실습1.c" />
+    <ClCompile Include="9주차3.FILE3.텍스트실습3.c" />
+    <ClCompile Include="9주차3.FILE3.텍스트실습2.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
