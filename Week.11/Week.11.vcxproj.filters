@@ -18,5 +18,8 @@
     <ClCompile Include="11주차2.DL2.동적할당실습.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="11주차 실습문제.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

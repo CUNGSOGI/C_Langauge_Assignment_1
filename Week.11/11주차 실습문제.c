@@ -11,7 +11,7 @@ typedef struct system {
 	int out;
 	int sellprice;
 	char name[100];
-};
+}SYSTEM;
 
 void in(struct system* s) {
 	int i, j = 0, k = 0, n, t = 0, S = 0;
@@ -101,10 +101,10 @@ void allprint(struct system* s) {
 	printf("\n총판매량: %.f(판매율 %0.2f%%)\n", allout, (allout / allin) * 100);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (m < s[i].out) m = s[i].out, j = i + 1;
-	printf("가장 많이 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j-1].name, m);
+	printf("가장 많이 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j - 1].name, m);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (M > s[i].out) M = s[i].out, j = i + 1;
-	printf("가장 적게 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j-1].name, M);
+	printf("가장 적게 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j - 1].name, M);
 	for (i = 0; i < SIZE; i++) {
 		if (s[i].in - s[i].out <= s[i].in * 0.2)
 			printf("상품 ID %d : 상품명: %s 재고부족(%d)\n", i + 1, s[i].name, s[i].in - s[i].out);
@@ -113,12 +113,34 @@ void allprint(struct system* s) {
 	return;
 }
 
+void product_information_in(struct system* s) {
+	FILE* fp = NULL;
+	fp = fopen("Shopping.bin", "rb");
+	if (fp == NULL) exit(-1);
+	fread(s, sizeof(SYSTEM), SIZE, fp);
+	fclose(fp);
+	printf("불러오기 성공");
+	Sleep(500);
+	return;
+}
+
+void product_information_out(struct system* s) {
+	FILE* fp = NULL;
+	fp = fopen("Shopping.bin", "wb");
+	if (fp == NULL) exit(-1);
+	fwrite(s, sizeof(SYSTEM), SIZE, fp);
+	fclose(fp);
+	printf("저장되었습니다");
+	Sleep(500);
+	return;
+}
+
 int main() {
 	int n;
 	struct system s[SIZE] = { 0 };
 	while (1) {
 		system("cls");
-		printf("[쇼핑몰 관리 프로그램]\n>원하는 메뉴를 선택하세요.(1.입고, 2.판매, 3.개별현황, 4.전체현황, 5.종료)\n>");
+		printf("[쇼핑몰 관리 프로그램]\n>원하는 메뉴를 선택하세요.(1.입고, 2.판매, 3.개별현황, 4.전체현황, 5.불러오기, 6.저장하기, 7.종료)\n>");
 		scanf("%d", &n);
 		system("cls");
 		switch (n) {
@@ -126,8 +148,11 @@ int main() {
 		case 2: out(s); break;
 		case 3: print(s); break;
 		case 4: allprint(s); break;
+		case 5: product_information_in(s); break;
+		case 6: product_information_out(s); break;
 		default:
 			return 0;
 		}
 	}
 }
+

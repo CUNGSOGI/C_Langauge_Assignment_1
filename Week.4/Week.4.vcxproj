@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4주차 2.문자열실습1.c" />
-    <ClCompile Include="4주차 실습문제.c" />
+    <ClCompile Include="4주차 실습문제.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="4주차4.문자열4.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

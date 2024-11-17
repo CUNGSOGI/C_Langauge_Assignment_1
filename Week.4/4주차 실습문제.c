@@ -55,12 +55,12 @@ void print(struct system* s) {
 	printf("\n총판매량: %.f(판매율 %0.2f)\n", allout, (allout / allin) * 100);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (m < s[i].out) m = s[i].out, j = i + 1;
-	printf("가장 많이 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j].name, m);
+	printf("가장 많이 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j-1].name, m);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (M > s[i].out) M = s[i].out, j = i + 1;
-	printf("가장 적게 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j].name, M);
+	printf("가장 적게 판매된 상품 : ID %d, 상품명: %s, 판매량 %d\n", j, s[j-1].name, M);
 	for (i = 0; i < SIZE; i++) {
-		if (s[i].in - s[i].out <= 2)
+		if (s[i].in - s[i].out <= s[i].in * 0.2)
 			printf("상품 ID %d : 상품명: %s 재고부족(%d)\n", i + 1, s[i].name, s[i].in - s[i].out);
 	}
 	Sleep(10000);
