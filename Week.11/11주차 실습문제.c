@@ -138,7 +138,7 @@ void product_information_out(struct system* s) {
 int main() {
 	int n;
 	struct system s[SIZE] = { 0 };
-	while (1) {
+	while (1) {	
 		system("cls");
 		printf("[쇼핑몰 관리 프로그램]\n>원하는 메뉴를 선택하세요.(1.입고, 2.판매, 3.개별현황, 4.전체현황, 5.불러오기, 6.저장하기, 7.종료)\n>");
 		scanf("%d", &n);
