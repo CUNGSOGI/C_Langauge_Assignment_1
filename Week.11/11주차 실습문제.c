@@ -19,12 +19,12 @@ void in(struct system* s) {
 		if (s[i].id != 0) t++;
 	}
 	for (i = 0; i < SIZE; i++) {
-		printf("»óÇ° ID: ");
+		printf("ìƒí’ˆ ID: ");
 		scanf("%d", &n);
 		for (j = 0, k = 0; j < SIZE; j++) {
 			if (s[j].id == n) {
-				printf("ÀÔ°í·®: "), scanf("%d", &n), s[j].in += n;
-				printf("ÆÇ¸Å°¡°İ: "), scanf("%d", &n), s[j].sellprice = n;
+				printf("ì…ê³ ëŸ‰: "), scanf("%d", &n), s[j].in += n;
+				printf("íŒë§¤ê°€ê²©: "), scanf("%d", &n), s[j].sellprice = n;
 				printf("\n");
 				k++;
 				return;
@@ -32,13 +32,13 @@ void in(struct system* s) {
 		}
 		if (k == 0 && t < SIZE) {
 			s[i].id = n;
-			printf("»óÇ°¸í: "), getchar(), gets(s[i].name);
-			printf("ÀÔ°í·®: "), scanf("%d", &n), s[i].in = n;
-			printf("ÆÇ¸Å°¡°İ: "), scanf("%d", &n), s[i].sellprice = n;
+			printf("ìƒí’ˆëª…: "), getchar(), gets(s[i].name);
+			printf("ì…ê³ ëŸ‰: "), scanf("%d", &n), s[i].in = n;
+			printf("íŒë§¤ê°€ê²©: "), scanf("%d", &n), s[i].sellprice = n;
 			printf("\n");
 		}
 		else {
-			printf("ID °¹¼ö ÃÊ°ú");
+			printf("ID ê°¯ìˆ˜ ì´ˆê³¼");
 			Sleep(5000);
 			return;
 		}
@@ -48,18 +48,18 @@ void in(struct system* s) {
 
 void out(struct system* s) {
 	int n, i, S = 0;
-	printf("»óÇ°ID :");
+	printf("ìƒí’ˆID :");
 	scanf("%d", &n);
 	for (i = 0; i < SIZE; i++) {
 		if (s[i].id == n)
 			break;
 	}
 	if (i == SIZE) {
-		printf("¾ø´Â ID");
+		printf("ì—†ëŠ” ID");
 		Sleep(500);
 	}
 	else {
-		printf("ÆÇ¸Å·®: ");
+		printf("íŒë§¤ëŸ‰: ");
 		scanf("%d", &S), s[i].out += S;
 	}
 	return;
@@ -67,22 +67,22 @@ void out(struct system* s) {
 
 void print(struct system* s) {
 	int n, i, S = 0;
-	printf("»óÇ°ID :");
+	printf("ìƒí’ˆID :");
 	scanf("%d", &n);
 	for (i = 0; i < SIZE - 1; i++) {
 		if (s[i].id == n)
 			break;
 	}
 	if (i == SIZE - 1) {
-		printf("¾ø´Â ID");
+		printf("ì—†ëŠ” ID");
 		Sleep(500);
 	}
 	else {
-		printf("»óÇ°¸í: %s\n", s[i].name);
-		printf("»óÇ°°¡°İ: %d\n", s[i].sellprice);
-		printf("ÀÔ°í·®: %d\n", s[i].in);
-		printf("ÆÇ¸Å·®: %d\n", s[i].out);
-		printf("ÃÑÆÇ¸Å±İ¾×: %d\n", s[i].out * s[i].sellprice);
+		printf("ìƒí’ˆëª…: %s\n", s[i].name);
+		printf("ìƒí’ˆê°€ê²©: %d\n", s[i].sellprice);
+		printf("ì…ê³ ëŸ‰: %d\n", s[i].in);
+		printf("íŒë§¤ëŸ‰: %d\n", s[i].out);
+		printf("ì´íŒë§¤ê¸ˆì•¡: %d\n", s[i].out * s[i].sellprice);
 		printf("\n");
 		Sleep(5000);
 	}
@@ -92,22 +92,22 @@ void print(struct system* s) {
 void allprint(struct system* s) {
 	double allout = 0, allin = 0;
 	int i, j, m = 0, M = 100;
-	printf("Àç°í¼ö·®: ");
+	printf("ì¬ê³ ìˆ˜ëŸ‰: ");
 	for (int i = 0; i < SIZE; i++) {
 		printf("%d ", s[i].in - s[i].out);
 		allin += s[i].in;
 		allout += s[i].out;
 	}
-	printf("\nÃÑÆÇ¸Å·®: %.f(ÆÇ¸ÅÀ² %0.2f%%)\n", allout, (allout / allin) * 100);
+	printf("\nì´íŒë§¤ëŸ‰: %.f(íŒë§¤ìœ¨ %0.2f%%)\n", allout, (allout / allin) * 100);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (m < s[i].out) m = s[i].out, j = i + 1;
-	printf("°¡Àå ¸¹ÀÌ ÆÇ¸ÅµÈ »óÇ° : ID %d, »óÇ°¸í: %s, ÆÇ¸Å·® %d\n", j, s[j - 1].name, m);
+	printf("ê°€ì¥ ë§ì´ íŒë§¤ëœ ìƒí’ˆ : ID %d, ìƒí’ˆëª…: %s, íŒë§¤ëŸ‰ %d\n", j, s[j - 1].name, m);
 	for (i = 0, j = 0; i < SIZE; i++)
 		if (M > s[i].out) M = s[i].out, j = i + 1;
-	printf("°¡Àå Àû°Ô ÆÇ¸ÅµÈ »óÇ° : ID %d, »óÇ°¸í: %s, ÆÇ¸Å·® %d\n", j, s[j - 1].name, M);
+	printf("ê°€ì¥ ì ê²Œ íŒë§¤ëœ ìƒí’ˆ : ID %d, ìƒí’ˆëª…: %s, íŒë§¤ëŸ‰ %d\n", j, s[j - 1].name, M);
 	for (i = 0; i < SIZE; i++) {
 		if (s[i].in - s[i].out <= s[i].in * 0.2)
-			printf("»óÇ° ID %d : »óÇ°¸í: %s Àç°íºÎÁ·(%d)\n", i + 1, s[i].name, s[i].in - s[i].out);
+			printf("ìƒí’ˆ ID %d : ìƒí’ˆëª…: %s ì¬ê³ ë¶€ì¡±(%d)\n", i + 1, s[i].name, s[i].in - s[i].out);
 	}
 	Sleep(10000);
 	return;
@@ -119,7 +119,7 @@ void product_information_in(struct system* s) {
 	if (fp == NULL) exit(-1);
 	fread(s, sizeof(SYSTEM), SIZE, fp);
 	fclose(fp);
-	printf("ºÒ·¯¿À±â ¼º°ø");
+	printf("ë¶ˆëŸ¬ì˜¤ê¸° ì„±ê³µ");
 	Sleep(500);
 	return;
 }
@@ -130,7 +130,7 @@ void product_information_out(struct system* s) {
 	if (fp == NULL) exit(-1);
 	fwrite(s, sizeof(SYSTEM), SIZE, fp);
 	fclose(fp);
-	printf("ÀúÀåµÇ¾ú½À´Ï´Ù");
+	printf("ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤");
 	Sleep(500);
 	return;
 }
@@ -140,7 +140,7 @@ int main() {
 	struct system s[SIZE] = { 0 };
 	while (1) {	
 		system("cls");
-		printf("[¼îÇÎ¸ô °ü¸® ÇÁ·Î±×·¥]\n>¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä.(1.ÀÔ°í, 2.ÆÇ¸Å, 3.°³º°ÇöÈ², 4.ÀüÃ¼ÇöÈ², 5.ºÒ·¯¿À±â, 6.ÀúÀåÇÏ±â, 7.Á¾·á)\n>");
+		printf("[ì‡¼í•‘ëª° ê´€ë¦¬ í”„ë¡œê·¸ë¨]\n>ì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”.(1.ì…ê³ , 2.íŒë§¤, 3.ê°œë³„í˜„í™©, 4.ì „ì²´í˜„í™©, 5.ë¶ˆëŸ¬ì˜¤ê¸°, 6.ì €ì¥í•˜ê¸°, 7.ì¢…ë£Œ)\n>");
 		scanf("%d", &n);
 		system("cls");
 		switch (n) {
