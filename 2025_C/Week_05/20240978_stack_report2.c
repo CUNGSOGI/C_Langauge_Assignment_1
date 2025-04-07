@@ -1,76 +1,95 @@
-#pragma warning(disable:4996)
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MAX 100
+
 typedef struct {
-	int* data;
-	int top;
-	int capacity;
+    int data[MAX];
+    int top;
 } Stack;
 
-void initStack(Stack* s, int initialSize) {
-	s->data = (int*)malloc(initialSize * sizeof(int));
-	if (s->data == NULL) {
-		printf("메모리 할당 실패!\n");
-		exit(1);
-	}
-	s->top = -1;
-	s->capacity = initialSize;
-}
-
-int isFull(Stack* s) {
-	return s->top == s->capacity - 1;
+void initStack(Stack* s) {
+    s->top = -1;
 }
 
 int isEmpty(Stack* s) {
-	return s->top == -1;
+    return s->top == -1;
+}
+
+int isFull(Stack* s) {
+    return s->top == MAX - 1;
 }
 
 void push(Stack* s, int value) {
-	if (isFull(s)) {
-		printf("Stack overflow! cannot push %d\n", value);
-		return;
-	}
-	s->data[++(s->top)] = value;
+    if (isFull(s)) {
+        printf("Stack overflow! Cannot push %d\n", value);
+        return;
+    }
+    s->data[++(s->top)] = value;
 }
 
 int pop(Stack* s) {
-	if (isEmpty(s)) {
-		printf("Stack underflow! cannot pop\n");
-		return -1;
-	}
-	return s->data[(s->top)--];
+    if (isEmpty(s)) {
+        printf("Stack underflow! Cannot pop\n");
+        return -1;
+    }
+    return s->data[(s->top)--];
 }
 
 int peek(Stack* s) {
-	if (isEmpty(s)) {
-		printf("Stack is empty! cannot peek\n");
-		return -1;
-	}
-	return s->data[s->top];
+    if (isEmpty(s)) {
+        printf("Stack is empty! Cannot peek\n");
+        return -1;
+    }
+    return s->data[s->top];
 }
 
-void freeStack(Stack* s) {
-	free(s->data);
+void display(Stack* s) {
+    if (isEmpty(s)) {
+        printf("Stack is empty!\n");
+        return;
+    }
+    printf("Stack contents: ");
+    for (int i = 0; i <= s->top; i++) {
+        printf("%d ", s->data[i]);
+    }
+    printf("\n");
+}
+
+int isMatching(char open, char close) {
+    if (open == '(' && close == ')') return 1;
+    if (open == '[' && close == ']') return 1;
+    if (open == '{' && close == '}') return 1;
+    return 0;
 }
 
 int main() {
-	Stack s;
-	int n = 0, a = 0;
-	char str[100];
-	printf("문자열을 입력하시오: ");
-	gets_s(str, sizeof(str));
-	int l = 0;
-	while (str[l] != '\0') l++;
-	initStack(&s, l);
-	//시발 재귀 써야해;;
+    Stack s;
+    char str[MAX];
+    initStack(&s);
+    int isValid = 1;
 
-	printf("거꾸로 출력된 문자열: ");
-	for (int i = 0; i < l; i++)
-		push(&s, str[i]);
-	while (isEmpty(&s) == 0) {
-		printf("%c", peek(&s));
-		pop(&s);
-	}
-	freeStack(&s);
+    printf("문자열 입력 : ");
+    fgets(str, MAX, stdin);
+    str[strcspn(str, "\n")] = '\0';
+
+    for (int i = 0; i < str[i] != '\0'; i++) {
+        char ch = str[i];
+        if (ch == '(' || ch == '[' || ch == '{') {
+            push(&s, ch);
+        }
+        else if (ch == ')' || ch == ']' || ch == '}') {
+            if (isEmpty(&s) || !isMatching(pop(&s), ch)) {
+                isValid = 0;
+                break;
+            }
+        }
+
+    }
+    if (!isEmpty(&s)) isValid = 0;
+
+    if (isValid) printf("유효한 괄호\n");
+    else    printf("유효하지 않은 괄호\n");
+
+    return 0;
 }
