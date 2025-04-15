@@ -1,3 +1,4 @@
+#pragma warning(disable:4996)
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -26,6 +27,7 @@ int main() {
 	printf("입력 완료\n");
 
 	while (1) {
+		printf("\n");
 		printf("---학생 성적 관리 프로그램---\n");
 		printf("1. 학생정보 추가\n");
 		printf("2. 학생정보 삭제\n");
@@ -33,7 +35,7 @@ int main() {
 		printf("4. 학생정보 출력(옵션 : 0, 1, 2)\n");
 		printf("5. 프로그램 종료\n");
 		scanf("%d", &choice);
-		system("clear");
+		system("cls");
 		switch (choice) {
 		case 1:		//add
 			if (capacity - size < 5) {
@@ -64,6 +66,7 @@ int main() {
 			else	printf("해당 학생은 없는 학생입니다.\n");
 			break;
 		case 4: {
+			printf("0: 전체 출력, 1: 평균 이상 학생 출력, 2.평균 미만 학생 출력\n");
 			int option;
 			scanf("%d", &option);
 			double average = calculateAverage(scores, size);
@@ -73,14 +76,12 @@ int main() {
 		case 5:
 			free(scores);
 			printf("프로그램 종료\n");
-			break;
+			return 0;
 		default:
 			printf("잘못된 입력\n");
 			break;
 		}
 	}
-
-	return 0;
 }
 void deleteStudent(int* scores, int size, int studentNumber) {
 	if (studentNumber < 1 || studentNumber > size) {
