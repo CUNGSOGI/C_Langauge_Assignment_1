@@ -41,6 +41,7 @@ bool enqueue(LinearQueue* q, int value) {
 int dequeue(LinearQueue* q) {
 	if (isEmpty(q)) {
 		printf("큐가 비어 있습니다.\n");
+		initQueue(&q);
 		return -1;  // 큐가 비어 있을 때 -1 반환
 	}
 	int value = q->data[q->front];
@@ -52,10 +53,6 @@ int main() {
 	LinearQueue q;
 	initQueue(&q);
 	while (1) {
-		if (isEmpty(&q)) {
-			printf("큐가 비었으므로 초기화 합니다");
-			initQueue(&q);
-		}
 		int n, value;
 		printf("\n--- 스택 메뉴 ---\n1. 삽입\n2. 삭제\n3. 큐 데이터 출력\n4. 종료\n메뉴를 선택하세요: ");
 		scanf("%d", &n);
